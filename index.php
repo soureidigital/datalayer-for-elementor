@@ -1,9 +1,9 @@
 <?php
     /**
-     * Plugin Name: Datalayer FormSubmit Elementor
+     * Plugin Name: Datalayer For Elementor
      * Plugin URI: https://sourei.com.br
      * Description: Plugin que define o datalayer
-     * Version: 1.0
+     * Version: 1.0.0
      * Author: Sourei TEC
      * Author URI: https://github.com/otaviocefet
     **/
