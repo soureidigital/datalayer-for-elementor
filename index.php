@@ -4,7 +4,7 @@
      * Plugin URI: https://github.com/soureidigital/datalayer-for-elementor
      * Description: When filling out and submitting an Elementor form, all form fields are sent to the dataLayer
      * Version: 1.0.0
-     * Author: Sourei TEC
+     * Author: Sourei TEC, otaviodeveloper
      * Author URI: https://github.com/otaviocefet
     **/
 

@@ -1,5 +1,5 @@
 === Sourei TEC - Datalayer For Elementor ===
-Contributors: otaviodeveloper
+Contributors: otaviodeveloper, sourei
 Tags: woocommerce, elementor, datalayer, formsubmit, google tag manager
 Stable tag: 1.0.0
 Requires at least: 5.0
