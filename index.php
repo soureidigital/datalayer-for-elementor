@@ -1,8 +1,8 @@
 <?php
     /**
      * Plugin Name: Datalayer For Elementor
-     * Plugin URI: https://sourei.com.br
-     * Description: Plugin que define o datalayer
+     * Plugin URI: https://github.com/soureidigital/datalayer-for-elementor
+     * Description: When filling out and submitting an Elementor form, all form fields are sent to the dataLayer
      * Version: 1.0.0
      * Author: Sourei TEC
      * Author URI: https://github.com/otaviocefet

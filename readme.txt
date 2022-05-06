@@ -13,7 +13,7 @@ Integration between the Elementor Forms and Datalayer
 
 == Description ==
 
-When filling out and submitting an Elementor form, all form fields are sent to a dataLayer, following the following model:
+When filling out and submitting an Elementor form, all form fields are sent to the dataLayer, following the following model:
 
 {
     "event": "formSubmitDLFSE",
