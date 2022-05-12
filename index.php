@@ -22,7 +22,7 @@
     function dataLayerDeclaration(){
         $post = $wp_query->get_queried_object();
         $pagename = $post->post_name;       
-        
+
         ?>
             <script>
                 dataLayer = [{
@@ -36,16 +36,48 @@
 
     // function ajax_handler
     add_action('elementor_pro/forms/new_record',function($record, $ajax_handler) {
-        $form_name = $record->get_form_settings( 'form_name' );
-        //normalize the fields
+        $form['name'] = $record->get_form_settings( 'form_name' );
+        $form['id'] = $record->get_form_settings( 'id' );
         $raw_fields = $record->get( 'fields' );
-        $fields = [];
-        foreach ( $raw_fields as $id => $field ) {
-            $fields[ $id ] = $field['value'];
-        }
+        $meta['page_url']['title'] = 'Page URL';
+        $meta['page_url']['value'] = home_url( $wp->request );
+        $meta['user_agent']['title'] = 'User Agent';
+        $meta['user_agent']['value'] = $_SERVER['HTTP_USER_AGENT'];
+        $meta['remote_ip']['title'] = 'Remote IP';
+        $meta['remote_ip']['value'] = $_SERVER['HTTP_CLIENT_IP'];
+        $meta['date']['title'] = 'Date';
+        $meta['date']['value'] = date(get_option('date_format'));
+        $meta['time']['title'] = 'Time';
+        $meta['time']['value'] = date(get_option('time_format'));
+
+
     
         $ajax_handler->add_response_data( 'fields', $raw_fields );
+        $ajax_handler->add_response_data( 'form', $form );
+        $ajax_handler->add_response_data( 'meta', $meta );
+
     },10,2);
     // function ajax_handler
+
+
+    //
+    add_action('wp_footer','User_Location',1);
+    function User_Location(){
+        ?>
+            <script>
+                async function fetchText(){
+                    let url = 'https://ipinfo.io/json?token=2c568e62ebe8c5';
+                    let response = await fetch(url);
+                    let dataUserLocation = await response.json();
+                    dataLayer.push({
+                        'Data Location':dataUserLocation
+                    });
+                }
+                fetchText();
+            </script>
+        
+        <?php
+    }
+    //
 
 ?>
